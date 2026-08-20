@@ -1,47 +1,364 @@
-<section id="inicio" class="hero">
+```html
+<!DOCTYPE html>
+<html lang="es">
 
-            <div class="hero-overlay">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Personal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-                <div class="hero-content">
+<body>
 
-                    <img
-                        src="img/perfil.jpg"
-                        alt="Fotografía de Julissa Castro Mejía"
-                        class="foto-perfil"
-                    >
+    <!-- NAVEGACIÓN -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Mi Portafolio</div>
 
-                    <p class="saludo">
-                        Bienvenido a mi portafolio
+            <ul class="menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+        <div class="hero-overlay">
+            <div class="hero-content">
+
+                <img src="img/perfil.jpg" alt="Foto de perfil" class="foto-perfil">
+
+                <p class="saludo">Bienvenido a mi portafolio</p>
+
+                <h1>ParaEstudiar UCR</h1>
+
+                <h2>Estudiante de Ingeniería en Computación</h2>
+
+                <p class="descripcion-hero">
+                    Apasionado por el desarrollo de software, las estructuras
+                    de datos, los algoritmos y la creación de soluciones
+                    tecnológicas eficientes.
+                </p>
+
+                <div class="hero-botones">
+                    <a href="#proyectos" class="btn">Ver proyectos</a>
+                    <a href="#contacto" class="btn btn-secundario">Contactarme</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE MI -->
+    <section class="section" id="sobre-mi">
+
+        <div class="contenedor">
+
+            <h2 class="titulo-seccion">Sobre Mí</h2>
+
+            <p class="subtitulo-seccion">
+                Conoce un poco más sobre mi formación, experiencia e intereses.
+            </p>
+
+            <div class="sobre-mi-container">
+
+                <div class="sobre-mi-texto">
+
+                    <h3>¿Quién soy?</h3>
+
+                    <p>
+                        Soy estudiante de Ingeniería en Computación con interés
+                        en el desarrollo web y de aplicaciones de escritorio.
+                        Disfruto resolver problemas mediante programación y
+                        aplicar estructuras de datos y algoritmos en proyectos reales.
                     </p>
 
-                    <h1>
-                        Hola, soy Julissa Castro Mejía
-                    </h1>
-
-                    <h2>
-                        Profesora de informática y desarrolladora de software
-                    </h2>
-
-                    <p class="descripcion-hero">
-                        Desarrollo soluciones web y aplicaciones utilizando
-                        diferentes tecnologías orientadas a resolver
-                        necesidades reales.
+                    <p>
+                        He trabajado en proyectos utilizando Java, JavaFX,
+                        PHP, MySQL, HTML, CSS y JavaScript, fortaleciendo mis
+                        conocimientos en programación orientada a objetos y
+                        bases de datos.
                     </p>
 
-                    <div class="hero-botones">
+                    <p>
+                        Mi objetivo es continuar desarrollando habilidades
+                        técnicas y participar en proyectos innovadores que
+                        aporten valor mediante la tecnología.
+                    </p>
 
-                        <a href="#proyectos" class="btn">
-                            Ver proyectos
-                        </a>
+                </div>
 
-                        <a href="#contacto" class="btn btn-secundario">
-                            Contactarme
-                        </a>
+                <div class="datos-personales">
 
+                    <div class="dato">
+                        <strong>Nombre</strong>
+                        <span>ParaEstudiar UCR</span>
+                    </div>
+
+                    <div class="dato">
+                        <strong>Profesión</strong>
+                        <span>Estudiante de Ingeniería en Computación</span>
+                    </div>
+
+                    <div class="dato">
+                        <strong>Ubicación</strong>
+                        <span>Costa Rica</span>
+                    </div>
+
+                    <div class="dato">
+                        <strong>Especialidad</strong>
+                        <span>Desarrollo de Software</span>
+                    </div>
+
+                    <div class="dato">
+                        <strong>Intereses</strong>
+                        <span>Java, Desarrollo Web y Algoritmos</span>
                     </div>
 
                 </div>
 
             </div>
 
-        </section>
+            <div class="habilidades-container">
+
+                <h3>Habilidades Técnicas</h3>
+
+                <div class="habilidades">
+                    <span>Java</span>
+                    <span>JavaFX</span>
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>Git</span>
+                    <span>POO</span>
+                    <span>Algoritmos</span>
+                    <span>Grafos</span>
+                    <span>Bases de Datos</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="section section-gray" id="proyectos">
+
+        <div class="contenedor">
+
+            <h2 class="titulo-seccion">Mis Proyectos</h2>
+
+            <p class="subtitulo-seccion">
+                Algunos de los proyectos desarrollados durante mi formación.
+            </p>
+
+            <div class="proyectos-container">
+
+                <!-- Proyecto 1 -->
+                <article class="proyecto">
+
+                    <div class="proyecto-imagen">
+                        <img src="img/proyecto1.jpg" alt="Sistema de Aerolíneas">
+                    </div>
+
+                    <div class="proyecto-contenido">
+
+                        <span class="proyecto-categoria">
+                            Desarrollo Web
+                        </span>
+
+                        <h3>Sistema de Gestión de Aerolíneas</h3>
+
+                        <p>
+                            Aplicación desarrollada con PHP y MySQL para la
+                            administración de usuarios, vuelos, aviones,
+                            boletos y control de privilegios.
+                        </p>
+
+                        <div class="proyecto-tecnologias">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+
+                        <button>Ver más</button>
+
+                    </div>
+
+                </article>
+
+                <!-- Proyecto 2 -->
+                <article class="proyecto">
+
+                    <div class="proyecto-imagen">
+                        <img src="img/proyecto2.jpg" alt="Red de Antenas">
+                    </div>
+
+                    <div class="proyecto-contenido">
+
+                        <span class="proyecto-categoria">
+                            Java
+                        </span>
+
+                        <h3>Red de Antenas con Dijkstra</h3>
+
+                        <p>
+                            Proyecto en Java y JavaFX que implementa grafos y
+                            el algoritmo de Dijkstra para encontrar rutas
+                            óptimas entre antenas.
+                        </p>
+
+                        <div class="proyecto-tecnologias">
+                            <span>Java</span>
+                            <span>JavaFX</span>
+                            <span>Grafos</span>
+                            <span>Dijkstra</span>
+                        </div>
+
+                        <button>Ver más</button>
+
+                    </div>
+
+                </article>
+
+                <!-- Proyecto 3 -->
+                <article class="proyecto">
+
+                    <div class="proyecto-imagen">
+                        <img src="img/proyecto3.jpg" alt="Sistema de Usuarios">
+                    </div>
+
+                    <div class="proyecto-contenido">
+
+                        <span class="proyecto-categoria">
+                            Bases de Datos
+                        </span>
+
+                        <h3>Sistema de Administración de Usuarios</h3>
+
+                        <p>
+                            Sistema CRUD con autenticación, validaciones y
+                            control de acceso utilizando PHP y MySQL.
+                        </p>
+
+                        <div class="proyecto-tecnologias">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+
+                        <button>Ver más</button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section" id="contacto">
+
+        <div class="contenedor">
+
+            <h2 class="titulo-seccion">Contacto</h2>
+
+            <p class="subtitulo-seccion">
+                ¿Tienes alguna consulta o propuesta? Contáctame.
+            </p>
+
+            <div class="contacto-container">
+
+                <div class="contacto-info">
+
+                    <h3>Información de Contacto</h3>
+
+                    <p>
+                        Estoy disponible para proyectos académicos,
+                        colaboraciones y oportunidades de aprendizaje.
+                    </p>
+
+                    <div class="contacto-dato">
+                        <strong>Correo</strong>
+                        estudiante@ucr.ac.cr
+                    </div>
+
+                    <div class="contacto-dato">
+                        <strong>Ubicación</strong>
+                        Costa Rica
+                    </div>
+
+                    <div class="contacto-dato">
+                        <strong>Especialidad</strong>
+                        Desarrollo de Software
+                    </div>
+
+                </div>
+
+                <form id="formContacto">
+
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Correo Electrónico</label>
+                        <input type="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Asunto</label>
+                        <input type="text" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mensaje</label>
+                        <textarea rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">
+                        Enviar Mensaje
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-container">
+
+            <p>
+                © 2026 ParaEstudiar UCR. Todos los derechos reservados.
+            </p>
+
+            <p>
+                Desarrollado con HTML5 y CSS3.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
+```
