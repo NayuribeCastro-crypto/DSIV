@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tu Voz Importa</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <a href="index.html">
+            <img src="img/Logo Inicio.jpg" alt="Logo Tu Voz Importa">
+        </a>
+
+        <nav>
+
+            <a href="index.html">INICIO</a>
+
+            <a href="We.html">NOSOTROS</a>
+
+            <a href="Services.html">SERVICIOS</a>
+
+            <a href="AdditionalInformation.html">
+                INFORMACIÓN ADICIONAL
+            </a>
+
+            <a href="Register.html">REGISTRO</a>
+
+            <a href="Contact.html">CONTACTO</a>
+
+        </nav>
+
+    </header>
+
+    <div class="contenedor">
+
+        <h1>
+            Registro de una situación
+        </h1>
+
+        <form id="formRegistro">
+
+            Nombre:
+
+            <input
+                type="name"
+                id="name"
+                name="name"
+                required
+            >
+
+            <br><br>
+
+            Apellidos:
+
+            <input
+                type="text"
+                id="lastname"
+                name="lastname"
+                required
+            >
+
+            <br><br>
+
+            Correo electrónico:
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                required
+            >
+
+            <br><br>
+
+            Teléfono:
+
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+            >
+
+            <br><br>
+
+            Tipo de acoso:
+
+            <select
+                id="type"
+                name="type"
+                required
+            >
+
+                <option value="">
+                    Seleccione una opción
+                </option>
+
+                <option value="Acoso escolar">
+                    Acoso escolar
+                </option>
+
+                <option value="Ciberacoso">
+                    Ciberacoso
+                </option>
+
+                <option value="Acoso laboral">
+                    Acoso laboral
+                </option>
+
+                <option value="Acoso callejero">
+                    Acoso callejero
+                </option>
+
+                <option value="Acoso psicológico">
+                    Acoso psicológico
+                </option>
+
+                <option value="Acoso sexual">
+                    Acoso sexual
+                </option>
+
+            </select>
+
+            <br><br>
+
+            Fecha:
+
+            <input
+                type="date"
+                id="date"
+                name="date"
+                required
+            >
+
+            <br><br>
+
+            Observaciones:
+
+            <br>
+
+            <textarea
+                id="observations"
+                name="observations"
+                rows="5"
+                cols="40"
+                required
+            ></textarea>
+
+            <br><br>
+
+            <input
+                type="submit"
+                value="Registrar"
+            >
+
+            <input
+                type="reset"
+                value="Limpiar"
+            >
+
+        </form>
+
+        <br>
+
+        <button
+            class="btn-volver"
+            onclick="history.back()"
+        >
+            ← Volver
+        </button>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+
+        emailjs.init("3fkXdQ22d8SIx5EMN");
+
+        document
+        .getElementById("formRegistro")
+        .addEventListener("submit", function(event){
+
+            event.preventDefault();
+
+            const nombre =
+                document.getElementById("name").value;
+
+            const apellido =
+                document.getElementById("lastname").value;
+
+            const correo =
+                document.getElementById("email").value;
+
+            const telefono =
+                document.getElementById("phone").value;
+
+            const tipo =
+                document.getElementById("type").value;
+
+            const fecha =
+                document.getElementById("date").value;
+
+            const observaciones =
+                document.getElementById("observations").value;
+
+            const parametros = {
+
+                name: nombre,
+                lastname: apellido,
+                email: correo,
+                phone: telefono,
+                type: tipo,
+                date: fecha,
+                observations: observaciones
+
+            };
+
+            emailjs.send(
+                "service_TuVozSegura",
+                "template_t3wdq3n",
+                parametros
+            )
+
+            .then(function(){
+
+                alert(
+                    "Registro realizado correctamente. Revise su correo electrónico."
+                );
+
+                document
+                .getElementById("formRegistro")
+                .reset();
+
+            })
+
+            .catch(function(error){
+
+                alert(
+                    "Ocurrió un error al enviar el correo."
+                );
+
+                console.log(error);
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
