@@ -1,1 +1,0 @@
-Documentación técnica, manuales y PDF ejecutivo
