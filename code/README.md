@@ -1,1 +1,0 @@
-Espacio reservado para la implementación de Spring Boot y React + TS
