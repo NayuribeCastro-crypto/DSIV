@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Sidebar</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+
+    <body>
+
+        <nav th:fragment ="sidebar"
+             class="col-md-12 sidebar p-3">
+
+            <h5>Men&Uacute;</h5>
+
+            <ul class="nav flex-column">
+
+
+                <li class="nav-item">
+                    <a th:href="@{/receptions/index}"><i class="fa fa-user"></i>Recepcion</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a th:href="@{/collectionCenters/index}"><i class="fa fa-user"></i>Centro de acopio</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a th:href="@{/recyclingInventories/index}"><i class="fa fa-user"></i>Inventario de reciclaje</a>
+                </li>
+                
+                
+            </ul>
+        </nav>
+    </body>
+</html>

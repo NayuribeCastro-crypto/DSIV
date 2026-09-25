@@ -1,0 +1,68 @@
+<!<!doctype html>
+<html
+    xmlns:th="http://thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" >
+    <head>
+
+        <title layout:title-pattern="$CONTENT_TITLE - Sistema"></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+
+        <style>
+            .sidebar{
+                background: #21252A !important;
+                color: #cccccc;
+            }
+
+            .sidebar >ul>.nav-item>a, #a_homepage, .adm-name{
+
+                color: #cccccc !important;
+                text-decoration: none;
+            }
+
+            .navbar-ucr{
+                background-color: #0e0f10 !important;
+            }
+
+
+
+        </style>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-extend-lg navbar-ucr">
+            <div class="container-fluid">
+                <a id="#a_homepage" th:href="@{/}">POS UCR</a>
+                <div class="ms-auto">
+                    <span class="adm-name text-white">
+                        Admin.
+                    </span>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Agregamos el fragmento del sidebar-->
+                <div th:replace="~{fragments/sidebar :: sidebar}"></div>
+
+                <!-- Agregamos el fragmento del contenido-->
+                <main class="col-md-10 ms-auto px-md-4 py-4 main-content">
+                    <section layout:fragment="content">
+                        <h3>Cargando....</h3>
+                    </section>
+                </main>
+            </div>
+        </div>
+        <footer class="text-muted">
+            Sistema Administrativo POS - UCR
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    </body>
+</html>

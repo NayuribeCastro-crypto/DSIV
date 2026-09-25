@@ -1,0 +1,86 @@
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/admin}">
+
+<head>
+    <title>Editar Recepción</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<div>Formulario para registrar recepción</div>
+
+<section layout:fragment="content">
+    <div class="row">
+        <div class="container-fluid">
+            <fieldset>
+                <form th:method="POST"
+                      th:action="@{/receptions/update}"
+                      th:object="${reception}">
+                    
+                    <input type="hidden" th:field="*{id}" />
+
+                    <div class="col-12 form-group">
+                        <label>Fecha de recepción</label>
+                        <input class="form-control" type="date" th:field="*{ReceptionDate}" required/>
+                    </div>
+
+                    <div class="col-12 form-group">
+                        <label>Peso</label>
+                        <input class="form-control" type="number" th:field="*{weight}" required/>
+                    </div>
+
+                    <div class="col-12 form-group">
+                        <label>Observaciones</label>
+                        <textarea class="form-control" th:field="*{observations}" required></textarea>
+                    </div>
+
+                    <div class="col-12 form-group">
+                        <label>Origen</label>
+                        <input class="form-control" type="text" th:field="*{origin}" required/>
+                    </div>
+
+                    <div class="col-12 form-group">
+                        <label>Condición del material</label>
+                        <select class="form-control" th:field="*{materialCondition}" required>
+                            <option value="">-- Seleccione --</option>
+                            <option value="Bueno">Bueno</option>
+                            <option value="Regular">Regular</option>
+                            <option value="Malo">Malo</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 form-group">
+                        <label>Clasificación</label>
+                        <select class="form-control" th:field="*{classification}" required>
+                            <option value="">-- Seleccione --</option>
+                            <option value="Reciclable">Reciclable</option>
+                            <option value="No reciclable">No reciclable</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 form-group">
+                        <label>Estado de recepción</label>
+                        <select class="form-control" th:field="*{receptionStatus}" required>
+                            <option value="">-- Seleccione --</option>
+                            <option value="Pendiente">Pendiente</option>
+                            <option value="En proceso">En proceso</option>
+                            <option value="Completada">Completada</option>
+                            <option value="Cancelada">Cancelada</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 text-end">
+                        <button class="btn btn-success" type="submit">
+                            <i class="fa fa-save"></i> Guardar cambios </button>
+                        
+                        <a class="btn btn-default" th:href="@{/receptions/index}">Cancelar</a>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/admin}">
+
+<head>
+    <title>Registrar Inventario</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<div>Formulario para registrar inventario</div>
+
+<section layout:fragment="content">
+    <div class="row">
+        <div class="container-fluid">
+            <fieldset>
+                <form th:method="POST"
+                      th:action="@{/recyclingInventories/save}"
+                      th:object="${recyclingInventory}">
+
+                    <div class="col-12 form-group">
+                        <label>Peso</label>
+                        <input class="form-control" type="number" th:field="*{weight}"
+                               required/>
+                    </div>
+
+                    <div class="col-12 form-group">
+                        <label>Fecha de ingreso</label>
+                        <input class="form-control" type="date" th:field="*{entryDate}"
+                               required/>
+                    </div>
+
+                    <div class="col-12 form-group">
+                        <label>Ubicación</label>
+                        <input class="form-control" type="text" th:field="*{location}" 
+                               required/>
+                    </div>
+
+                    <div class="col-12 form-group">
+                        <label>Estado</label>
+                        <input class="form-control" type="text" th:field="*{state}"
+                               required/>
+                    </div>
+
+                    <div class="col-12 form-group">
+                        <label>Fecha de salida</label>
+                        <input class="form-control" type="date" th:field="*{exitDate}"/>
+                    </div>
+
+                    <div class="col-12 form-group">
+                        <label>Cantidad</label>
+                        <input class="form-control" type="number" th:field="*{quantity}" 
+                               required/>
+                    </div>
+
+                    <div class="col-12 form-group">
+                        <label>Tipo de almacenamiento</label>
+                        <input class="form-control" type="text" th:field="*{storageType}" 
+                               required/>
+                    </div>
+
+                    <div class="col-12 form-group">
+                        <label>Observaciones</label>
+                        <textarea class="form-control" th:field="*{observations}" 
+                                  required></textarea>
+                    </div>
+
+                    <div class="col-12 text-end">
+                        <button class="btn btn-success" type="submit">
+                            <i class="fa fa-save"></i> Crear inventario
+                        </button>
+                        <a class="btn btn-default" th:href="@{/recyclingInventories/index}">Cancelar</a>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+</section>
+</body>
+</html>
