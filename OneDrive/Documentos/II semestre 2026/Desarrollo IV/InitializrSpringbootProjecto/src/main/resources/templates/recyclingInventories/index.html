@@ -1,0 +1,64 @@
+
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/admin}" >
+
+
+    <head>
+        <title>Recepcion</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+
+        <section layout:fragment="content">
+
+            <a class="btn btn-success" th:href="@{/recyclingInventories/create}"><i class="fa fa-plus"></i>Agregar informacion </a>
+
+            <table class="table table-striped">
+
+                <thead>
+                    <tr> 
+                        <th>#</th>
+                        <th>Peso</th>
+                        <th>Fecha de ingreso</th>
+                        <th>Ubicacion</th>
+                        <th>Estado</th>
+                        <th>Fecha de salida</th>
+                        <th>Cantidad</th>
+                        <th>Tipo de almacenamiento</th>
+                        <th>Observaciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr th:each="recyInventary, item:${recyclingInventories}">
+                        <td th:text="${item.count}"></td>
+
+                        <td th:text="${recyInventary.weight}"></td>
+                        <td th:text="${recyInventary.entryDate}"></td>
+                        <td th:text="${recyInventary.location}"></td>
+
+                        <td th:text="${recyInventary.state}"></td>
+                        <td th:text="${recyInventary.exitDate}"></td> 
+                        <td th:text="${recyInventary.quantity}"></td>
+                        <td th:text="${recyInventary.storageType}"></td>
+                        <td th:text="${recyInventary.observations}"></td>
+
+                        <td>
+
+                            <a class="btn btn-info" th:href="@{/recyclingInventories/edit(recyclingInventoryId=${recyInventary.id})}"><i class="fa fa-pencil"></i>Editar</a>
+                            <a class="btn btn-danger" th:href="@{/recyclingInventories/deleteById(recyclingInventoryId=${recyInventary.id})}"
+                               onclick ="return confirm('Desea eliminar el producto?')">
+                                <i class="fa fa-trash"></i>Eliminar</a>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </body>
+</html>

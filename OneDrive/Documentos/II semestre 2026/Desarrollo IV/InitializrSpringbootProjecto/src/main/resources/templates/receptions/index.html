@@ -1,0 +1,65 @@
+
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/admin}" >
+
+
+    <head>
+        <title>Recepcion</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+
+
+    <body>
+
+        <section layout:fragment="content">
+
+            <a class="btn btn-success" th:href="@{/receptions/create}"><i class="fa fa-plus"></i>Agregar Producto </a>
+
+            <table class="table table-striped">
+
+                <thead>
+                    <tr> 
+                        <th>#</th>
+                        <th>Fecha del dia</th>
+                        <th>Peso</th>
+                        <th>Observaciones</th>
+                        <th>Origen</th>
+                        <th>Condicion del material</th>
+                        <th>Clasificacion</th>
+                        <th>Estado de recepción</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr th:each="recep, item:${receptions}">
+                        <td th:text="${item.count}"></td>
+
+                        <td th:text="${recep.ReceptionDate}"></td>
+                        <td th:text="${recep.weight}"></td>
+                        <td th:text="${recep.observations}"></td>
+
+                        <td th:text="${recep.origin}"></td>
+                        <td th:text="${recep.materialCondition}"></td> 
+                        <td th:text="${recep.classification}"></td>
+                        <td th:text="${recep.receptionStatus}"></td>
+
+
+                        <td>
+
+                            <a class="btn btn-info" th:href="@{/receptions/edit(receptionId=${recep.id})}"><i class="fa fa-pencil"></i>Editar</a>
+                            <a class="btn btn-danger" th:href="@{/receptions/deleteById(receptionId=${recep.id})}"
+                               onclick ="return confirm('Desea eliminar el producto?')">
+                                <i class="fa fa-trash"></i>Eliminar</a>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </body>
+</html>

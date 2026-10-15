@@ -1,0 +1,56 @@
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/admin}">
+
+<head>
+    <title>Centros de Acopio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<section layout:fragment="content">
+
+    <a class="btn btn-success" th:href="@{/collectionCenters/create}">
+        <i class="fa fa-plus"></i>Agregar Centro
+    </a>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Dirección</th>
+            <th>Encargado</th>
+            <th>Observación</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="center, item : ${collectionCenters}">
+            <td th:text="${item.count}"></td>
+            <td th:text="${center.name}"></td>
+            <td th:text="${center.phone}"></td>
+            <td th:text="${center.address}"></td>
+            <td th:text="${center.personInCharge}"></td>
+            <td th:text="${center.observation}"></td>
+
+            <td>
+                <a class="btn btn-info"
+                   th:href="@{/collectionCenters/edit(collectionCentersId=${center.id})}">
+                    <i class="fa fa-pencil"></i>Editar
+                </a>
+                <a class="btn btn-danger"
+                   th:href="@{/collectionCenters/deleteById(collectionCentersId=${center.id})}"
+                   onclick="return confirm('¿Desea eliminar este centro?')">
+                    <i class="fa fa-trash"></i>Eliminar
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</section>
+</body>
+</html>
